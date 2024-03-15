@@ -11,7 +11,7 @@ const collectEmployees = function() {
     lastName: [],
     salary: []
   }
-  
+
   while(collect) {
     //collect the 3 datasets
     let nameFirst = prompt("Enter first name:");
@@ -23,12 +23,13 @@ const collectEmployees = function() {
     employeeData.salary.push(yearlySalary);
     //asks if user wants to continue will break loop if user presses "cancel"
     collect = confirm("Do you want to add another employee?");
+    console.log(collect);
     if(!collect) {
       break;
     }
-    return employeeData;
   }
   console.table(employeeData);
+  return employeeData;
 }
 
 // Display the average salary
