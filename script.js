@@ -6,21 +6,24 @@ const collectEmployees = function() {
   // TODO: Get user input to create and return an array of employee objects
   let collect = true;
   //array to store employees
-  let employeeData = {
-    firstName: [],
-    lastName: [],
-    salary: []
+  let employee =  {
+    firstName: "placeholder",
+    lastName: "placeholder",
+    salary: 0
   }
+
+  let employeeData = [];
 
   while(collect) {
     //collect the 3 datasets
-    let nameFirst = prompt("Enter first name:");
-    let nameLast = prompt("Enter last name:");
-    let yearlySalary = prompt("Enter salary:");
+    let firstNameInput = prompt("Enter first name:");
+    let lastNameInput = prompt("Enter last name:");
+    let salaryInput = prompt("Enter salary:");
     //store datasets
-    employeeData.firstName.push(nameFirst);
-    employeeData.lastName.push(nameLast);
-    employeeData.salary.push(yearlySalary);
+    employee.firstName = firstNameInput;
+    employee.lastName = lastNameInput;
+    employee.salary = salaryInput;
+    employeeData.push(employee);
     //asks if user wants to continue will break loop if user presses "cancel"
     collect = confirm("Do you want to add another employee?");
     console.log(collect);
