@@ -17,7 +17,7 @@ const collectEmployees = function() {
     let nameFirst = prompt("Enter first name:");
     let nameLast = prompt("Enter last name:");
     let yearlySalary = prompt("Enter salary:");
-    //store data sets
+    //store datasets
     employeeData.firstName.push(nameFirst);
     employeeData.lastName.push(nameLast);
     employeeData.salary.push(yearlySalary);
@@ -28,6 +28,7 @@ const collectEmployees = function() {
       break;
     }
   }
+
   console.table(employeeData);
   return employeeData;
 }
@@ -51,6 +52,11 @@ const displayAverageSalary = function(employeesArray) {
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
+  //Gets a random number within 0 - length of array
+  let randElement = Math.floor(Math.random() * employeesArray.length);
+  let randEmployee = employeesArray[randElement];
+
+  return randEmployee;
 }
 
 /*
