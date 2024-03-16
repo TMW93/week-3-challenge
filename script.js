@@ -38,10 +38,15 @@ const displayAverageSalary = function(employeesArray) {
 
   //Loops through whole salary array and gives the total sum
   for(let i = 0; i < employeesArray.length; i++) {
-    totalSalary = totalSalary + employeesArray[i];
+    //Two ways to convert the salary string to an integer
+    // let convertedSalary = parseInt(employeesArray[i].salary);
+    let convertedSalary = +employeesArray[i].salary;
+    totalSalary = totalSalary + convertedSalary;
   }
 
   averageSalary = totalSalary / employeesArray.length;
+  //Limiting decimal points to 2 places for better visibility
+  averageSalary = averageSalary.toFixed(2);
 
   return averageSalary;
 }
@@ -51,7 +56,10 @@ const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
   //Gets a random number within 0 - length of array
   let randElement = Math.floor(Math.random() * employeesArray.length);
-  let randEmployee = employeesArray[randElement];
+  let randEmployeeFirstName = employeesArray[randElement].firstName;
+  let randEmployeeLastName = employeesArray[randElement].lastName;
+
+  let randEmployee = randEmployeeFirstName.concat(" ", randEmployeeLastName);
 
   return randEmployee;
 }
@@ -102,11 +110,13 @@ const trackEmployeeData = function() {
 
   console.table(employees);
 
-  displayAverageSalary(employees);
+  let averageSalary = displayAverageSalary(employees);
+  console.log(`The average employee salary between our ${employees.length} employee(s) is ${averageSalary}.`);
 
   console.log('==============================');
 
-  getRandomEmployee(employees);
+  let randEmployee = getRandomEmployee(employees);
+  console.log(`Congratulations to ${randEmployee}, our random drawing winner!`);
 
   employees.sort(function(a,b) {
     if (a.lastName < b.lastName) {
