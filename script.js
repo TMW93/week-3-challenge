@@ -59,6 +59,7 @@ const getRandomEmployee = function(employeesArray) {
   let randEmployeeFirstName = employeesArray[randElement].firstName;
   let randEmployeeLastName = employeesArray[randElement].lastName;
 
+  //Combines the first name and last together as one string
   let randEmployee = randEmployeeFirstName.concat(" ", randEmployeeLastName);
 
   return randEmployee;
