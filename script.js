@@ -6,8 +6,6 @@ const collectEmployees = function() {
   // TODO: Get user input to create and return an array of employee objects
   let collect = true;
   //array to store employees
-  
-
   let employeeData = [];
 
   while(collect) {
@@ -25,12 +23,8 @@ const collectEmployees = function() {
     employee.lastName = lastNameInput;
     employee.salary = salaryInput;
     employeeData.push(employee);
-    console.log(employeeData);
     //asks if user wants to continue will break loop if user presses "cancel"
     collect = confirm("Do you want to add another employee?");
-    if(!collect) {
-      break;
-    }
   }
   // console.log(employeeData);
   return employeeData;
