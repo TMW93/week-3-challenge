@@ -38,9 +38,11 @@ const displayAverageSalary = function(employeesArray) {
 
   //Loops through whole salary array and gives the total sum
   for(let i = 0; i < employeesArray.length; i++) {
+    //removing the '$' symbol from the input
+    let noSymbol = employeesArray[i].salary.substring(1);
     //Two ways to convert the salary string to an integer
     // let convertedSalary = parseInt(employeesArray[i].salary);
-    let convertedSalary = +employeesArray[i].salary;
+    let convertedSalary = +noSymbol;
     totalSalary = totalSalary + convertedSalary;
   }
 
